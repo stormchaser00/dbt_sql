@@ -1,3 +1,6 @@
+-- may expand on the function sometime to calculate weeks etc. 
+-- But for now it calculates number of months and number of years between date parts
+
 create or replace function {{target.schema}}.datediffc(interval string, start_date date, end_date date)
 returns integer
 as 
