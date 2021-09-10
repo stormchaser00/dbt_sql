@@ -1,0 +1,11 @@
+https://medium.com/google-cloud/loading-and-transforming-data-into-bigquery-using-dbt-65307ad401cd
+```
+{% macro cleanup_numeric_macro() %}
+CREATE OR REPLACE FUNCTION {{target.schema}}.cleanup_numeric(x STRING) AS
+(
+  IF ( x != 'NULL' AND x != 'PrivacySuppressed',
+       CAST(x as FLOAT64),
+       NULL )
+);
+{% endmacro %}
+```
